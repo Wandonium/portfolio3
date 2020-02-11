@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'The Historia Demo';
-    src: url('./font/TheHistoriaDemo.ttf');
+    src: url('font/TheHistoriaDemo.ttf');
 }
 
 html {
