@@ -1,4 +1,4 @@
-<?php include 'index.php'; ?>
+<?php include 'form.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Cache-control" content="no-cache">
     <title>Hillary Wando</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
