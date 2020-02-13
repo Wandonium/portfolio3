@@ -259,6 +259,11 @@ li {
     font-weight: 300;
 }
 
+.about-details p {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
 .profile-img {
     flex: 1;
 }
@@ -333,6 +338,10 @@ li {
     margin: 2rem -2px 2rem 0;
 }
 
+.skill p {
+    font-size: 1.3rem;
+}
+
 .icon-container {
     width: 10rem;
     height: 10rem;
@@ -387,6 +396,18 @@ li {
     font-size: 3rem;
     font-weight: 300;
     margin: 1rem 0;
+}
+
+.portfolio-description p {
+    font-size: 1.4rem;
+}
+
+.portfolio-description .p-link {
+    color: #3082ff;
+}
+
+.portfolio-description .p-link:hover {
+    color: #2f67cd;
 }
 
 .portfolio-description .cta {
@@ -444,6 +465,10 @@ li {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     position: relative;
+}
+
+.timeline .date p {
+    font-size: 1.4rem;
 }
 
 .timeline .date:last-of-type {
@@ -653,6 +678,7 @@ input[type='submit']:hover {
 @media screen and (max-width: 600px) {
     body {
         overflow-x: hidden;
+        width: 100%;
     }
     .menu-toggler {
         top: 2rem;
@@ -723,30 +749,39 @@ input[type='submit']:hover {
     }
 }
 
-@media screen and (max-width: 375px) {
-    /* .profile-img .img_overlay {
-        position: absolute;
-        top: 0.015rem;
-        left: 3.24rem;
-        height: 0;
-        bottom: 0;
-        width: 80%;
-        height: 37%;
-        background: rgba(0, 0, 0, 0.75);
-    } */
-}
-
 @media screen and (max-width: 320px) {
-    /* .profile-img .img_overlay {
-        position: absolute;
-        top: 0.015rem;
-        left: 2.9rem;
-        height: 0;
-        bottom: 0;
-        width: 80%;
-        height: 32.8%;
-        background: rgba(0, 0, 0, 0.75);
-    } */
+    body {
+        margin-left: 4em;
+    }
+    .landing-text {
+        left: 62%;
+    }
+    .top-nav {
+        left: 0;
+    }
+    .menu-toggler {
+        top: 5rem;
+        right: -3.5rem;
+    }
+    .timeline ul {
+        margin-left: 11em;
+    }
+    .timeline .date p {
+        font-size: 1.3em;
+    }
+    .timeline .date::before,
+    .timeline .date::after {
+        font-size: 1em;
+    }
+    .timeline .date::before {
+        margin-left: 3rem;
+    }
+    .portfolio-description h1 {
+        font-size: 2.5rem;
+    }
+    form {
+        margin-left: 0.8em;
+    }
 }
 
 
