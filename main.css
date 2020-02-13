@@ -784,7 +784,7 @@ input[type='submit']:hover {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 412px) {
     .nav-list {
         flex-direction: column;
     }
