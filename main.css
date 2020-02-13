@@ -1,4 +1,4 @@
-/*Start global*/
+    /*Start global*/
 
 * {
     margin: 0;
@@ -228,6 +228,43 @@ li {
 .landing-text h6 {
     font-size: 2rem;
     font-weight: 400;
+}
+
+.scrolldown {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-80px) translateX(-50%) rotate(45deg);
+}
+
+.scrolldown span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    animation: scrolldown 1.5s linear infinite;
+    opacity: 0;
+}
+
+.scrolldown span:nth-child(1) {
+    transform: translate(-15px, -15px);
+    animation-delay: -0.4s;
+}
+
+.scrolldown span:nth-child(2) {
+    transform: translate(0, 0);
+    animation-delay: -0.2s;
+}
+
+.scrolldown span:nth-child(3) {
+    transform: translate(15px, 15px);
+    animation-delay: 0s;
 }
 
 
@@ -664,6 +701,25 @@ input[type='submit']:hover {
     }
 }
 
+@keyframes scrolldown {
+    0% {
+        top: -5px;
+        left: -5px;
+        opacity: 0;
+    }
+    25% {
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+    }
+    50%,
+    100% {
+        top: 5px;
+        left: 5px;
+        opacity: 0;
+    }
+}
+
 
 /*End animations*/
 
@@ -780,112 +836,106 @@ input[type='submit']:hover {
     .landing-text h1 {
         font-size: 11.5rem;
     }
-}
-
-@media screen and (max-width: 600px) {
-    body {
-        overflow-x: hidden;
-        width: 100%;
+    @media screen and (max-width: 600px) {
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        .menu-toggler {
+            top: 2rem;
+            right: 2rem;
+        }
+        .landing-text h1 {
+            font-size: 8rem;
+        }
+        .landing-text h6 {
+            font-size: 1.4rem;
+        }
+        .nav-link {
+            font-size: 3.5rem;
+        }
+        .about .container {
+            flex-direction: column;
+        }
+        .profile-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 7rem 0;
+        }
+        .portfolio-item {
+            flex-direction: column;
+        }
+        .portfolio-img {
+            margin: 2rem 1rem;
+            width: 90vw;
+            order: 1;
+        }
+        .portfolio-description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            order: 2;
+        }
+        .portfolio-description p {
+            text-align: center;
+        }
+        .timeline p {
+            font-size: 1.6rem;
+        }
+        .timeline ul {
+            margin-left: 14rem;
+        }
+        .timeline .date::before {
+            font-size: 1.4rem;
+            margin-left: 2rem;
+        }
+        form {
+            width: 100%;
+        }
+        .up {
+            right: 2em;
+        }
     }
-    .menu-toggler {
-        top: 2rem;
-        right: 2rem;
+    @media screen and (max-width: 414px) {
+        .nav-list {
+            flex-direction: column;
+        }
     }
-    .landing-text h1 {
-        font-size: 8rem;
+    @media screen and (max-width: 320px) {
+        body {
+            margin-left: 4em;
+        }
+        .landing-text {
+            left: 62%;
+        }
+        .top-nav {
+            left: 0;
+        }
+        .menu-toggler {
+            top: 5rem;
+            right: -3.5rem;
+        }
+        .timeline ul {
+            margin-left: 11em;
+        }
+        .timeline .date p {
+            font-size: 1.3em;
+        }
+        .timeline .date::before,
+        .timeline .date::after {
+            font-size: 1em;
+        }
+        .timeline .date::before {
+            margin-left: 3rem;
+        }
+        .portfolio-description h1 {
+            font-size: 2.5rem;
+        }
+        form {
+            margin-left: 0.8em;
+        }
     }
-    .landing-text h6 {
-        font-size: 1.4rem;
-    }
-    .nav-link {
-        font-size: 3.5rem;
-    }
-    .about .container {
-        flex-direction: column;
-    }
-    .profile-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 0 7rem 0;
-    }
-    .portfolio-item {
-        flex-direction: column;
-    }
-    .portfolio-img {
-        margin: 2rem 1rem;
-        width: 90vw;
-        order: 1;
-    }
-    .portfolio-description {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 0;
-        order: 2;
-    }
-    .portfolio-description p {
-        text-align: center;
-    }
-    .timeline p {
-        font-size: 1.6rem;
-    }
-    .timeline ul {
-        margin-left: 14rem;
-    }
-    .timeline .date::before {
-        font-size: 1.4rem;
-        margin-left: 2rem;
-    }
-    form {
-        width: 100%;
-    }
-    .up {
-        right: 2em;
-    }
-}
-
-@media screen and (max-width: 414px) {
-    .nav-list {
-        flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    body {
-        margin-left: 4em;
-    }
-    .landing-text {
-        left: 62%;
-    }
-    .top-nav {
-        left: 0;
-    }
-    .menu-toggler {
-        top: 5rem;
-        right: -3.5rem;
-    }
-    .timeline ul {
-        margin-left: 11em;
-    }
-    .timeline .date p {
-        font-size: 1.3em;
-    }
-    .timeline .date::before,
-    .timeline .date::after {
-        font-size: 1em;
-    }
-    .timeline .date::before {
-        margin-left: 3rem;
-    }
-    .portfolio-description h1 {
-        font-size: 2.5rem;
-    }
-    form {
-        margin-left: 0.8em;
-    }
-}
-
-
-/*End media queries*/
+    /*End media queries*/

@@ -70,7 +70,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="bootstrap.css">
 </head>
 
 <body>
@@ -94,6 +93,11 @@
         <div class="landing-text">
             <h1>Hillary Wando</h1>
             <h6>Software Developer and Enterpreneur</h6>
+        </div>
+        <div class="scrolldown">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </header>
 
@@ -251,7 +255,7 @@
                     </li>
                     <li class="date" data-date="Oct 2015 - Dec 2015">
                         <h1>County Government of Kiambu</h1>
-                        <p>Junior Statistician, Department of Development and Planning. Duties included performing a variety of data related duties such as handling errors and missing data and performing a variety of administrative duties i.e meeting preparations,
+                        <p>Junior Statistician, Department of Development and Planning. Duties included performing a variety of data related tasks such as handling errors and missing data and performing a variety of administrative tasks i.e meeting preparations,
                             reservations and office supply & equipment management.</p>
                     </li>
                 </ul>
