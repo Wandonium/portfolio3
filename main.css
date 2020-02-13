@@ -588,6 +588,68 @@ input[type='submit']:hover {
 /*End footer*/
 
 
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: red;
+    margin: auto;
+    padding: .5rem;
+    border: 1px solid #000;
+    border-radius: .8rem;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.modal-content p {
+    font-size: 2rem;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 /*Start animations*/
 
 @keyframes pulse {
@@ -784,7 +846,7 @@ input[type='submit']:hover {
     }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 414px) {
     .nav-list {
         flex-direction: column;
     }

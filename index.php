@@ -2,23 +2,27 @@
 
 	// Message Vars
 	$msg = '';
-	$msgClass = '';
-	
+    $msgClass = '';
+    $name = '';
+    $email = '';
+    $message = '';
+
 	// Check for submit
 	if(filter_has_var(INPUT_POST, 'submit')) {
-		// Get the form data
+        // Get the form data
 		$name = htmlspecialchars($_POST['name']);
 		$email = htmlspecialchars($_POST['email']);
-		$message = htmlspecialchars($_POST['message']);
-
-		// check required fields
-		if(!empty($email) && !empty($name) && !empty($message)) {
+        $message = htmlspecialchars($_POST['message']);
+        $service = htmlspecialchars($_POST['services']);
+        
+        // check required fields
+		if(!empty($email) && !empty($name) && !empty($message) && !empty($service)) {
 			// Passed
-			// Check Email
+            // Check Email
 			if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
 				// Failed
 				$msg = 'Please use a valid email';
-				$msgClass = 'alert-danger';
+                $msgClass = 'alert-danger';
 			} else {
 				// Passed
 				// Recipient Email
@@ -27,8 +31,10 @@
 				$body = '<h2>Contact Request</h2>
 					<h4>Name</h4><p>'.$name.'</p>
 					<h4>Email</h4><p>'.$email.'</p>
-					<h4>Message</h4><p>'.$message.'</p>';
+                    <h4>Message</h4><p>'.$message.'</p>
+                    <h4>Service</h4><p>'.$service.'</p>';
 
+                //echo 'Name: '.$name.'\nEmail: '.$email.'\nMessage: '.$message.'\nService: '.$service;
 				// Email Headers
 				$headers = "MIME-Version: 1.0" . "\r\n";
 				$headers .= "Content-Type: text/html;charset=UTF-8"."\r\n";
@@ -44,13 +50,12 @@
 					$msgClass = 'alert-danger';
 				}
 			}
-
 		} else {
-			// Failed
+            // Failed
 			$msg = 'Please fill in all fields';
-			$msgClass = 'alert-danger';
+            $msgClass = 'alert-danger';
 		}
-	}
+    }
 
 ?>
 <!DOCTYPE html>
@@ -66,11 +71,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="bootstrap.css">
-    <!-- <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/lux/bootstrap.min.css"> -->
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div class="menu-toggler">
             <div class="bar half start"></div>
             <div class="bar"></div>
@@ -91,9 +95,9 @@
             <h1>Hillary Wando</h1>
             <h6>Software Developer and Enterpreneur</h6>
         </div>
-    </header>
+    </header> -->
 
-    <section class="about" id="about">
+    <!-- <section class="about" id="about">
         <div class="container">
             <div class="profile-img" data-aos="fade-right" data-aos-delay="300">
                 <img src="images/profile.png" alt="My Profile Photo">
@@ -124,9 +128,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="services" id="services">
+    <!-- <section class="services" id="services">
         <div class="container">
             <div class="section-heading">
                 <h1>Services</h1>
@@ -154,18 +158,11 @@
                     <h1>Mobile App Development</h1>
                     <p>I build Android apps using Android Studio (Java + XML) but I can also use cross-platfrom frameworks like React Native and Flutter</p>
                 </div>
-                <!-- <div class="skill" data-aos="fade-in" data-aos-delay="1200">
-                    <div class="icon-container">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h1>Product Strategy</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quasi. Dolore dolorem vel maxime non aperiam quia, praesentium excepturi magnam.</p>
-                </div> -->
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="portfolio" id="portfolio">
+    <!-- <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-heading">
                 <h1>Portfolio</h1>
@@ -236,9 +233,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="experience" id="experience">
+    <!-- <section class="experience" id="experience">
         <div class="container">
             <div class="section-heading">
                 <h1>Work Experience</h1>
@@ -260,7 +257,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="contact" id="contact">
         <div class="container">
@@ -269,24 +266,50 @@
                 <h6>Let's work together</h6>
             </div>
             <?php if($msg != ''): ?>
-            <div class="alert <?php echo $msgClass; ?>">
-                <?php echo $msg; ?>
-            </div>
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <p><?php echo $msg; ?></p>
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+                <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // open modal
+                modal.style.display = "block";
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+                </script>
             <?php endif; ?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" data-aos="fade-up" data-aos-delay="300">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name..." value="<?php echo isset($_POST['name']) ? $name : ''; ?>" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name..." value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email..." value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email..." value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                 <label for="services">Services</label>
                 <select name="services" id="service">
-                    <option value="">Web Design</option>
-                    <option value="">Web Development</option>
-                    <option value="">Mobile App Development</option>
+                    <option value="Web Design">Web Design</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
                 </select>
                 <label for="message">Message</label>
                 <textarea name="message" id="message" cols="10" rows="10"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
-                <input type="submit" value="Submit">
+                <input type="submit" name="submit" value="Submit">
             </form>
         </div>
     </section>
