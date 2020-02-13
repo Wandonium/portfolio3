@@ -31,8 +31,8 @@
 				$body = '<h2>Contact Request</h2>
 					<h4>Name</h4><p>'.$name.'</p>
 					<h4>Email</h4><p>'.$email.'</p>
-                    <h4>Message</h4><p>'.$message.'</p>
-                    <h4>Service</h4><p>'.$service.'</p>';
+                    <h4>Service</h4><p>'.$service.'</p>
+                    <h4>Message</h4><p>'.$message.'</p>';
 
                 //echo 'Name: '.$name.'\nEmail: '.$email.'\nMessage: '.$message.'\nService: '.$service;
 				// Email Headers
@@ -74,7 +74,7 @@
 </head>
 
 <body>
-    <!-- <header>
+    <header>
         <div class="menu-toggler">
             <div class="bar half start"></div>
             <div class="bar"></div>
@@ -95,9 +95,9 @@
             <h1>Hillary Wando</h1>
             <h6>Software Developer and Enterpreneur</h6>
         </div>
-    </header> -->
+    </header>
 
-    <!-- <section class="about" id="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="profile-img" data-aos="fade-right" data-aos-delay="300">
                 <img src="images/profile.png" alt="My Profile Photo">
@@ -128,9 +128,9 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <!-- <section class="services" id="services">
+    <section class="services" id="services">
         <div class="container">
             <div class="section-heading">
                 <h1>Services</h1>
@@ -160,9 +160,9 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <!-- <section class="portfolio" id="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-heading">
                 <h1>Portfolio</h1>
@@ -233,9 +233,9 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <!-- <section class="experience" id="experience">
+    <section class="experience" id="experience">
         <div class="container">
             <div class="section-heading">
                 <h1>Work Experience</h1>
@@ -257,7 +257,7 @@
                 </ul>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <section class="contact" id="contact">
         <div class="container">
